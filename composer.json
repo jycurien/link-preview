@@ -8,13 +8,15 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "symfony/console": "6.2.*",
+        "symfony/css-selector": "6.2.*",
+        "symfony/dependency-injection": "6.2.*",
+        "symfony/dom-crawler": "6.2.*",
         "symfony/dotenv": "6.2.*",
         "symfony/flex": "^2",
         "symfony/framework-bundle": "6.2.*",
+        "symfony/http-client": "6.2.*",
         "symfony/runtime": "6.2.*",
         "symfony/yaml": "6.2.*"
-    },
-    "require-dev": {
     },
     "config": {
         "allow-plugins": {

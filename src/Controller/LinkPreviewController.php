@@ -2,14 +2,15 @@
 
 namespace App\Controller;
 
-use Symfony\Component\HttpFoundation\Response;
+use App\Service\PreviewService;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class LinkPreviewController
+class LinkPreviewController extends AbstractController
 {
-    #[Route('/', name: 'preview')]
-    public function preview()
+    #[Route('/preview/{url}', name: 'preview', requirements: ['url' => '.+'])]
+    public function preview(PreviewService $previewService, string $url)
     {
-        return new Response('TODO');
+        return $this->json($previewService->getPreview($url));
     }
 }
