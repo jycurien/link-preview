@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Service\PreviewService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface;
@@ -19,7 +20,7 @@ class LinkPreviewController extends AbstractController
      * @throws ClientExceptionInterface
      */
     #[Route('/preview/{url}', name: 'preview', requirements: ['url' => '.+'])]
-    public function preview(PreviewService $previewService, string $url)
+    public function preview(PreviewService $previewService, string $url): JsonResponse
     {
         return $this->json($previewService->getPreview($url));
     }
